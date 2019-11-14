@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+</head>
+
+<body>
+    <script>
+        let user_input = window.prompt("Enter a number between 0 and 26");
+        let alpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+        function generateButtons(user_input) {
+            for (let x = 0; x < user_input; x++) {
+                let y = document.createElement("BUTTON");
+                y.innerHTML = alpha[x];
+                y.onclick = function print_console() {
+                    console.log("Button " + alpha[x] + " was clicked");
+                }
+                document.body.appendChild(y);
+            }
+        }
+        generateButtons(user_input);
+
+        function recipe(title, servings, ingredients) {
+            this.title = title;
+            this.servings = servings;
+            this.ingredients = ingredients;
+        }
+        let recipe_1 = new recipe("Chicken Cacciatore", 2, ["cinnamon", "lettuce", "onion"]);
+        function print() {
+            document.write("<br>");
+            for (let a = 0; a < 3; a++) {
+                let b = Object.keys(recipe_1);
+                document.write(recipe_1[b[a]]);
+                document.write("<br>");
+            }
+        }
+        print();
+    </script>
+</body>
+
+</html>
